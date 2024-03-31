@@ -7,14 +7,12 @@ int main() {
 	cout << "Enter integration limits (through enter): ";
 	cin >> a >> b;
 	*/
-	double a = 0, b = 10, n = 3;
+	double a = 0, b = 10, n = 3, number = 10;
 	string func;
 	cout << "Enter an equation(without dx): ";
 	getline(cin, func);
 
-	cout << leftRectangle(getX(a, b, n), func) << endl;
-	cout << rightRectangle(getX(a, b, n), func) << endl;
-	cout << centralRectangle(getX(a, b, n), func) << endl;
-	cout << trapezoid(getX(a, b, n), func) << endl;
-	cout << poraboloid(getX(a, b, n), func) << endl;
+	double preciseMeaning = 50;
+
+	vector<graphic> res = getRes(a, b, n, func, preciseMeaning, number);
 }

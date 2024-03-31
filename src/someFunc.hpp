@@ -21,3 +21,9 @@ vector<double> getX(double a, double b, double n) {
 	}
 	return X;
 }
+
+struct graphic {
+	vector<double> x;
+	vector<double> y;
+	string name;
+};
