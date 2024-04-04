@@ -35,6 +35,8 @@ double poraboloid(vector<double>& n, string func) {
 		sum += (fun(func,n[i]) + fun(func, ((n[i+1]+n[i]) / 2)) + fun(func,n[i+1])) * (n[i + 1] - n[i]);
 	}
 	return sum/3;			//why 3 ?
+
+	//HZ, rabotaet ved 
 }
 
 vector<graphic> getRes(double a, double b, double n, string func, double preciseMeaning, int num) {
@@ -44,7 +46,7 @@ vector<graphic> getRes(double a, double b, double n, string func, double precise
 	res[1].name = "Method of right rectangles";
 	res[2].name = "Method of central rectangles";
 	res[3].name = "Method of trapezoid";
-	res[4].name = "Method of poraboloid";
+	res[4].name = "Method of paraboloid";
 
 	for (int i = 2; i < num; i++) {
 		vector<double> X = getX(a, b, n);
