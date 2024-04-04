@@ -39,7 +39,7 @@ double poraboloid(vector<double>& n, string func) {
 	//HZ, rabotaet ved 
 }
 
-vector<graphic> getRes(double a, double b, double n, string func, double preciseMeaning, int num) {
+vector<graphic> getRes(double a, double b, string func, double preciseMeaning, int num) {
 	vector<graphic> res(5);
 	
 	res[0].name = "Method of left rectangles";
@@ -49,10 +49,13 @@ vector<graphic> getRes(double a, double b, double n, string func, double precise
 	res[4].name = "Method of paraboloid";
 
 	for (int i = 2; i < num; i++) {
-		vector<double> X = getX(a, b, n);
+		vector<double> X = getX(a, b, i);
 		for (int j = 0; j < 5; j++) {
 			res[j].x.push_back(i);
 		}
+		double lR = leftRectangle(X, func);
+		double di = lR - preciseMeaning;
+		double ab = abs(di);
 		res[0].y.push_back(abs(leftRectangle(X, func) - preciseMeaning));
 		res[1].y.push_back(abs(rightRectangle(X, func) - preciseMeaning));
 		res[2].y.push_back(abs(centralRectangle(X, func) - preciseMeaning));

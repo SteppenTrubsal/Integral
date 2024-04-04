@@ -106,7 +106,6 @@ void Window::mainLoop()
 
 void Window::renderGUI()
 {
-	static int n = 3;
 	static int number = 10;
 	static bool limExWin = false;
 	static std::string funk = "(1-6*x)*exp(2*x)";
@@ -141,7 +140,7 @@ void Window::renderGUI()
 
 
 	ImGui::PushItemWidth(sliderWidth);
-	ImGui::SliderInt(uTC(u8"Кол-во"), &number, 0, 1000);
+	ImGui::SliderInt(uTC(u8"Кол-во"), &number, 0, 500);
 	ImGui::SameLine();
 	ImGui::InputText(uTC(u8"Точное значение"), &preciseMeaningStr);
 	ImGui::PopItemWidth();
@@ -157,7 +156,7 @@ void Window::renderGUI()
 			dLim2 = parser.Eval();
 			parser.SetExpr(preciseMeaningStr);
 			preciseMeaning = parser.Eval();
-			res = getRes(dLim1, dLim2, n, funk, preciseMeaning, number);
+			res = getRes(dLim1, dLim2, funk, preciseMeaning, number);
 
 		}
 		catch (mu::Parser::exception_type& e)
