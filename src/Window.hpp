@@ -140,7 +140,7 @@ void Window::renderGUI()
 
 
 	ImGui::PushItemWidth(sliderWidth);
-	ImGui::SliderInt(uTC(u8"Кол-во"), &number, 0, 500);
+	ImGui::SliderInt(uTC(u8"Кол-во"), &number, 0, 100);
 	ImGui::SameLine();
 	ImGui::InputText(uTC(u8"Точное значение"), &preciseMeaningStr);
 	ImGui::PopItemWidth();
@@ -167,7 +167,6 @@ void Window::renderGUI()
 			goto exEnd;
 		}
 		isTheResultReady = true;
-
 	}
 	if (isTheResultReady)
 	{

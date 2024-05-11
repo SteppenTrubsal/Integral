@@ -34,9 +34,7 @@ double poraboloid(vector<double>& n, string func) {
 	for (int i = 0; i < n.size() - 1; i++) {
 		sum += (fun(func,n[i]) + fun(func, ((n[i+1]+n[i]) / 2)) + fun(func,n[i+1])) * (n[i + 1] - n[i]);
 	}
-	return sum/3;			//why 3 ?
-
-	//HZ, rabotaet ved 
+	return sum/3;
 }
 
 vector<graphic> getRes(double a, double b, string func, double preciseMeaning, int num) {
@@ -53,9 +51,6 @@ vector<graphic> getRes(double a, double b, string func, double preciseMeaning, i
 		for (int j = 0; j < 5; j++) {
 			res[j].x.push_back(i);
 		}
-		double lR = leftRectangle(X, func);
-		double di = lR - preciseMeaning;
-		double ab = abs(di);
 		res[0].y.push_back(abs(leftRectangle(X, func) - preciseMeaning));
 		res[1].y.push_back(abs(rightRectangle(X, func) - preciseMeaning));
 		res[2].y.push_back(abs(centralRectangle(X, func) - preciseMeaning));

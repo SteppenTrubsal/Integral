@@ -15,7 +15,7 @@ vector<double> getX(double a, double b, double n) {
 	if (n == 1) { X.push_back(a); X.push_back(b); }
 	else {
 		double it = (b - a) / (n - 1);
-		for (double i = a; i <= b; i += it) {
+		for (double i = a; i <= b+1e-6; i += it) {
 			X.push_back(i);
 		}
 	}
